@@ -23,27 +23,30 @@ class _AnimateState extends State<Animate> {
       backgroundColor: Colors.black26,
       body: Stack(
         children: [
-          isTapOn ?  const WrapperScene(
-            colors: [Colors.transparent],
-            children: [
-              RainDropWidget(
-                rainConfig: RainConfig(
-                    count: 20,
-                    color: Colors.blue,
-                    isRoundedEndsDrop: true,
-                    areaXStart: 115,
-                    areaXEnd: 114,
-                    slideCurve: Curves.linear,
-                    areaYStart: 170,
-                    fallRangeMinDurMill: 20,
-                    fallRangeMaxDurMill: 500,
-                    lengthDrop: 20,
-                    widthDrop: 15,
-                    slideX: 0
+          isTapOn ?  const SizedBox(
+            width: 300,
+            child: WrapperScene(
+              colors: [Colors.transparent],
+              children: [
+                RainDropWidget(
+                  rainConfig: RainConfig(
+                      count: 2000,
+                      color: Colors.blue,
+                      isRoundedEndsDrop: true,
+                      areaXStart: 150,
+                      areaXEnd: 100,
+                      areaYStart: 195,
+                      fallRangeMinDurMill: 10,
+                      fallRangeMaxDurMill: 400,
+                      lengthDrop: 20,
+                      widthDrop: 10,
+                      slideX: 0,
+                      slideDurMill: 20
 
-                ),
-              )
-            ],) : Container(),
+                  ),
+                )
+              ],),
+          ) : Container(),
           AnimatedCrossFade(
               firstChild: GestureDetector(
                 onTap: (){
